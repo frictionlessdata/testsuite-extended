@@ -1,0 +1,24 @@
+sudo:
+  false
+
+language:
+  python
+
+python:
+  - 2.7
+  - 3.3
+  - 3.4
+  - 3.5
+
+env:
+  global:
+    - TOXENV="py${PYTHON_VERSION//./}"
+  matrix:
+    - SOURCE=git
+    - SOURCE=pypi
+
+install:
+  - make develop-${SOURCE}
+
+script:
+  - make test
