@@ -10,6 +10,9 @@ python:
   - 3.4
   - 3.5
 
+before_install:
+  - openssl aes-256-cbc -K $encrypted_89004861c545_key -iv $encrypted_89004861c545_iv -in .credentials.json.enc -out .credentials.json -d
+
 env:
   global:
     - TOXENV="py${PYTHON_VERSION//./}"
