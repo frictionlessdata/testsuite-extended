@@ -18,7 +18,7 @@ env:
     # - SOURCE=pypi
 
 install:
-  - make develop-${SOURCE}
+  - make install-${SOURCE}
 
 script:
   - make test

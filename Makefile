@@ -2,11 +2,11 @@
 
 all: list
 
-develop-git:
-	pip install -r requirements.git.txt
+install-git:
+	pip install --upgrade -r requirements.git.txt
 
-develop-pypi:
-	pip install -r requirements.pypi.txt
+install-pypi:
+	pip install --upgrade -r requirements.pypi.txt
 
 list:
 	@grep '^\.PHONY' Makefile | cut -d' ' -f2- | tr ' ' '\n'
