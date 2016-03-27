@@ -23,8 +23,10 @@ To run tests:
 $ make test
 ```
 
-Under hood the `behave` BDD framework is used.
-To run it manually use:
+Under hood the `behave` BDD framework with `py.test` integrations is used.
+See documetation - http://pythonhosted.org/behave/index.html.
+
+To run tests manually use:
 
 ```
 behave <path>
