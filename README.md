@@ -1,6 +1,7 @@
 # testsuite-py
 
 [![Travis](https://img.shields.io/travis/frictionlessdata/testsuite-py/master.svg)](https://travis-ci.org/frictionlessdata/testsuite-py)
+[![Gitter](https://img.shields.io/gitter/room/frictionlessdata/chat.svg)](https://gitter.im/frictionlessdata/chat)
 
 Integration python test suite for Frintionless Data core packages and plugins.
 
