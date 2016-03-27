@@ -55,18 +55,3 @@ docs/_build/
 
 # PyBuilder
 target/
-
-# Node
-node_modules/
-
-# Virtualenv
-venv/
-venv2/
-venv3/
-
-# Tmux
-.tmuxp.yml
-
-# Project
-tmp
-.projectile
