@@ -12,5 +12,5 @@ list:
 	@grep '^\.PHONY' Makefile | cut -d' ' -f2- | tr ' ' '\n'
 
 test:
-	behave -s features/datapackage
-	behave -s features/jsontableschema
+	behave -s --tags=-wip features/datapackage
+	behave -s --tags=-wip features/jsontableschema
