@@ -10,7 +10,7 @@ from jsontableschema import push_resource, pull_resource
 
 
 @when('We push/pull resource from "{path}" to SQL')
-def step_when_push_pull_resource(context, path):
+def step_when_push_pull_resource_to_sql(context, path):
 
     # Create engine
     engine = sa.create_engine('sqlite:///:memory:')
@@ -30,10 +30,3 @@ def step_when_push_pull_resource(context, path):
         data='target/%s/data.csv' % path,
         backend='sql',
         engine=engine)
-
-
-@then('No errors are occured')
-def step_then_no_errors_are_occured(context):
-
-    # Assertions
-    assert not context.failed

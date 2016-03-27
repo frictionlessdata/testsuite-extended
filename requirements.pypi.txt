@@ -1,5 +1,8 @@
+google-api-python-client
+sqlalchemy
 behave
 behave-pytest
+
 tabulator
 jsontableschema
 jsontableschema-bigquery

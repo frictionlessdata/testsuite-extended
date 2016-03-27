@@ -1,5 +1,8 @@
+google-api-python-client
+sqlalchemy
 behave
 behave-pytest
+
 git+https://github.com/frictionlessdata/tabulator-py.git@bug/remove-jsontableschema-dependency
 git+https://github.com/frictionlessdata/jsontableschema-py.git@master
 git+https://github.com/frictionlessdata/jsontableschema-bigquery-py.git@master
