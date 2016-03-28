@@ -6,6 +6,7 @@ Feature: Datapackage operations
 
     Examples: Datasets
         | dataset      |
+        | country-list |
         | testing      |
 
   Scenario Outline: Push/pull datapackage to SQL storage
