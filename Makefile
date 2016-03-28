@@ -12,4 +12,4 @@ list:
 	@grep '^\.PHONY' Makefile | cut -d' ' -f2- | tr ' ' '\n'
 
 test:
-	behave -Ts --tags=-skip --tags=-wip
+	behave -s --tags=-skip --tags=-wip
