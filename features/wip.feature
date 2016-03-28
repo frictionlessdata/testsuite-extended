@@ -5,6 +5,6 @@ Feature: Experimental feature
     When We push/pull datapackage from "<dataset>" to <backend>
     Then No errors are occured
 
-    Examples: Datasets
+    Examples: Mixed
         | backend | dataset |
         | SQL | language-codes |
