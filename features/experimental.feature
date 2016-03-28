@@ -7,4 +7,4 @@ Feature: Experimental feature
 
     Examples: Datasets
         | dataset                      |
-        | currency-codes               |
+        | population                   |
