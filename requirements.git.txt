@@ -5,7 +5,7 @@ behave-pytest
 
 # Current order because of an issue:
 # https://github.com/frictionlessdata/testsuite-py/issues/9
-git+https://github.com/frictionlessdata/jsontableschema-py.git@master
+git+https://github.com/frictionlessdata/jsontableschema-py.git@bug/null-value-cast
 git+https://github.com/frictionlessdata/tabulator-py.git@master
 git+https://github.com/frictionlessdata/jsontableschema-bigquery-py.git@master
 git+https://github.com/frictionlessdata/jsontableschema-sql-py.git@master
