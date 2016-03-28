@@ -1,10 +1,10 @@
 Feature: Experimental feature
 
   @wip
-  Scenario Outline: Push/pull datapackage to SQL storage
-    When We push/pull datapackage from "<dataset>" to SQL
+  Scenario Outline: Push/pull datapackage to storage
+    When We push/pull datapackage from "<dataset>" to <backend>
     Then No errors are occured
 
     Examples: Datasets
-        | dataset                      |
-        | population                   |
+        | backend | dataset |
+        | SQL | s-and-p-500-companies |
