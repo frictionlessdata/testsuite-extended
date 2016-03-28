@@ -5,13 +5,14 @@ Feature: Datapackage operations
     Then No errors are occured
 
     Examples: Datasets
-        | dataset |
-        | testing |
+        | dataset      |
+        | testing      |
 
   Scenario Outline: Push/pull datapackage to SQL storage
     When We push/pull datapackage from "<dataset>" to SQL
     Then No errors are occured
 
     Examples: Datasets
-        | dataset |
-        | testing |
+        | dataset      |
+        | country-list |
+        | testing      |
