@@ -11,7 +11,7 @@ Feature: Datapackage operations
       # | country-codes                |
         | country-list                 |
       # | currency-codes               |
-        | gb-country-regional-analysis |
+      # | gb-country-regional-analysis |
         | nasdaq-listings              |
         | testing                      |
 
