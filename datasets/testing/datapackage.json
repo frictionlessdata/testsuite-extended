@@ -2,8 +2,8 @@
     "name": "testing",
     "resources": [
         {
-            "name": "data1",
-            "path": "data/data1.csv",
+            "name": "data",
+            "path": "data.csv",
             "schema": {
                 "fields": [
                     {
@@ -31,7 +31,7 @@
         },
         {
             "name": "data2",
-            "path": "data/data2.csv",
+            "path": "data2.csv",
             "schema": {
                 "fields": [
                     {
@@ -47,7 +47,7 @@
                     {
                         "fields": "parent",
                         "reference": {
-                            "resource": "data1",
+                            "resource": "data",
                             "fields": "id"
                         }
                     }

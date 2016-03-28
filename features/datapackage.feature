@@ -5,5 +5,5 @@ Feature: Datapackage core and integrations work
     Then No errors are occured
 
     Examples: Synthetic
-        | path                       |
-        | datasets/datapackages/testing |
+        | path             |
+        | datasets/testing |
