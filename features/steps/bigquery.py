@@ -11,6 +11,7 @@ import uuid
 from behave import given, when, then
 from apiclient.discovery import build
 from oauth2client.client import GoogleCredentials
+from datapackage import push_datapackage, pull_datapackage
 from jsontableschema import push_resource, pull_resource
 from jsontableschema.plugins.bigquery import Storage
 
@@ -20,42 +21,78 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = '.credentials.json'
 credentials = GoogleCredentials.get_application_default()
 service = build('bigquery', 'v2', credentials=credentials)
 project = json.load(io.open('.credentials.json', encoding='utf-8'))['project_id']
-dataset = 'jsontableschema'
 
 
-@when('We push/pull resource from "{path}" to BigQuery')
-def step_when_push_pull_resource_to_bigquery(context, path):
+@when('We push/pull resource from "{dataset}" to BigQuery')
+def step_when_push_pull_resource_to_bigquery(context, dataset):
 
-    # Generate prefix
+    # Generate prefix, set group
     prefix = '%s_' % uuid.uuid4().hex
+    group = 'resource'
 
     try:
 
         # Push resource to storage
         push_resource(
             table='table',
-            schema='%s/schema.json' % path,
-            data='%s/data.csv' % path,
+            schema='datasets/%s/schema.json' % dataset,
+            data='datasets/%s/data.csv' % dataset,
             backend='bigquery',
             service=service,
             project=project,
-            dataset=dataset,
+            dataset=group,
             prefix=prefix)
 
         # Pull resource from storage
         pull_resource(
             table='table',
-            schema='target/bigquery/%s/schema.json' % path,
-            data='target/bigquery/%s/data.csv' % path,
+            schema='target/bigquery/%s/schema.json' % dataset,
+            data='target/bigquery/%s/data.csv' % dataset,
             backend='bigquery',
             service=service,
             project=project,
-            dataset=dataset,
+            dataset=group,
             prefix=prefix)
 
     finally:
 
         # Delete test tables from storage
-        storage = Storage(service, project, dataset, prefix=prefix)
+        storage = Storage(service, project, group, prefix=prefix)
+        for table in storage.tables:
+            storage.delete(table)
+
+
+@when('We push/pull datapackage from "{dataset}" to BigQuery')
+def step_when_push_pull_datapackage_to_bigquery(context, dataset):
+
+    # Generate prefix, set group
+    prefix = '%s_' % uuid.uuid4().hex
+    group = 'datapackage'
+
+    try:
+
+        # Push datapackage to storage
+        push_datapackage(
+            descriptor='datasets/%s/datapackage.json' % dataset,
+            backend='bigquery',
+            service=service,
+            project=project,
+            dataset=group,
+            prefix=prefix)
+
+        # Pull datapackage from storage
+        pull_datapackage(
+            descriptor='target/bigquery/%s/datapackage.json' % dataset,
+            name='name',
+            backend='bigquery',
+            service=service,
+            project=project,
+            dataset=group,
+            prefix=prefix)
+
+    finally:
+
+        # Delete test tables from storage
+        storage = Storage(service, project, group, prefix=prefix)
         for table in storage.tables:
             storage.delete(table)

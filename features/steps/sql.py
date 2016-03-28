@@ -12,8 +12,8 @@ from jsontableschema import push_resource, pull_resource
 from jsontableschema.plugins.sql import Storage
 
 
-@when('We push/pull resource from "{path}" to SQL')
-def step_when_push_pull_resource_to_sql(context, path):
+@when('We push/pull resource from "{dataset}" to SQL')
+def step_when_push_pull_resource_to_sql(context, dataset):
 
     # Prepare sql
     # TODO: move to module-level:
@@ -28,8 +28,8 @@ def step_when_push_pull_resource_to_sql(context, path):
         # Push resource to storage
         push_resource(
             table='table',
-            schema='%s/schema.json' % path,
-            data='%s/data.csv' % path,
+            schema='datasets/%s/schema.json' % dataset,
+            data='datasets/%s/data.csv' % dataset,
             backend='sql',
             engine=engine,
             prefix=prefix)
@@ -37,8 +37,8 @@ def step_when_push_pull_resource_to_sql(context, path):
         # Pull resource from storage
         pull_resource(
             table='table',
-            schema='target/sql/%s/schema.json' % path,
-            data='target/sql/%s/data.csv' % path,
+            schema='target/sql/%s/schema.json' % dataset,
+            data='target/sql/%s/data.csv' % dataset,
             backend='sql',
             engine=engine,
             prefix=prefix)
@@ -56,8 +56,8 @@ def step_when_push_pull_resource_to_sql(context, path):
                 pass
 
 
-@when('We push/pull datapackage from "{path}" to SQL')
-def step_when_push_pull_datapackage_to_sql(context, path):
+@when('We push/pull datapackage from "{dataset}" to SQL')
+def step_when_push_pull_datapackage_to_sql(context, dataset):
 
     # Prepare sql
     # TODO: move to module-level:
@@ -71,14 +71,14 @@ def step_when_push_pull_datapackage_to_sql(context, path):
 
         # Push datapackage to storage
         push_datapackage(
-            descriptor='%s/datapackage.json' % path,
+            descriptor='datasets/%s/datapackage.json' % dataset,
             backend='sql',
             engine=engine,
             prefix=prefix)
 
         # Pull datapackage from storage
         pull_datapackage(
-            descriptor='target/sql/%s/datapackage.json' % path,
+            descriptor='target/sql/%s/datapackage.json' % dataset,
             name='name',
             backend='sql',
             engine=engine,
