@@ -5,19 +5,21 @@ Feature: Datapackage operations
     Then No errors are occured
 
     Examples: Datasets
-        | dataset         |
-      # | country-codes   |
-        | country-list    |
-        | nasdaq-listings |
-        | testing         |
+        | dataset                      |
+      # | country-codes                |
+        | country-list                 |
+        | gb-country-regional-analysis |
+        | nasdaq-listings              |
+        | testing                      |
 
   Scenario Outline: Push/pull datapackage to SQL storage
     When We push/pull datapackage from "<dataset>" to SQL
     Then No errors are occured
 
     Examples: Datasets
-        | dataset         |
-      # | country-codes   |
-        | country-list    |
-        | nasdaq-listings |
-        | testing         |
+        | dataset                      |
+      # | country-codes                |
+        | country-list                 |
+        | gb-country-regional-analysis |
+        | nasdaq-listings              |
+        | testing                      |
