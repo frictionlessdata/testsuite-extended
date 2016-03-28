@@ -21,39 +21,41 @@ credentials = GoogleCredentials.get_application_default()
 service = build('bigquery', 'v2', credentials=credentials)
 project = json.load(io.open('.credentials.json', encoding='utf-8'))['project_id']
 dataset = 'jsontableschema'
-storage = Storage(service, project, dataset)
 
 
 @when('We push/pull resource from "{path}" to BigQuery')
 def step_when_push_pull_resource_to_bigquery(context, path):
 
-    # Generate table name
-    table = uuid.uuid4().hex
+    # Generate prefix
+    prefix = '%s_' % uuid.uuid4().hex
 
     try:
 
         # Push resource to storage
         push_resource(
-            table=table,
+            table='table',
             schema='%s/schema.json' % path,
             data='%s/data.csv' % path,
             backend='bigquery',
             service=service,
             project=project,
-            dataset=dataset)
+            dataset=dataset,
+            prefix=prefix)
 
         # Pull resource from storage
         pull_resource(
-            table=table,
+            table='table',
             schema='target/bigquery/%s/schema.json' % path,
             data='target/bigquery/%s/data.csv' % path,
             backend='bigquery',
             service=service,
             project=project,
-            dataset=dataset)
+            dataset=dataset,
+            prefix=prefix)
 
     finally:
 
-        # Delete table from storage
-        if storage.check(table):
+        # Delete test tables from storage
+        storage = Storage(service, project, dataset, prefix=prefix)
+        for table in storage.tables:
             storage.delete(table)
