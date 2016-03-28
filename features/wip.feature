@@ -7,4 +7,4 @@ Feature: Experimental feature
 
     Examples: Mixed
         | backend | dataset |
-        | SQL | language-codes |
+        | BigQuery | s-and-p-500-companies |
