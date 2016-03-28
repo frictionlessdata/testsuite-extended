@@ -7,4 +7,4 @@ Feature: Experimental feature
 
     Examples: Datasets
         | backend | dataset |
-        | SQL | s-and-p-500-companies |
+        | SQL | language-codes |

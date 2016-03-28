@@ -9,4 +9,5 @@ Feature: Datapackage-SQL integration
         | country-list                 |
         | gb-country-regional-analysis |
         | nasdaq-listings              |
+        | registry                     |
         | synthetic                    |
