@@ -6,9 +6,6 @@ Feature: Datapackage-BigQuery integration
 
     Examples: Datasets
         | dataset                      |
-      # | country-codes                |
         | country-list                 |
-      # | currency-codes               |
-      # | gb-country-regional-analysis |
         | nasdaq-listings              |
         | synthetic                    |
