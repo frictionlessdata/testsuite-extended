@@ -26,7 +26,7 @@ def step_when_push_pull_resource_to_sql(context, path):
     # Pull resource from storage
     pull_resource(
         table='table',
-        schema='target/%s/schema.json' % path,
-        data='target/%s/data.csv' % path,
+        schema='target/sql/%s/schema.json' % path,
+        data='target/sql/%s/data.csv' % path,
         backend='sql',
         engine=engine)
