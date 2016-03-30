@@ -12,13 +12,12 @@ from jsontableschema import push_resource, pull_resource
 from jsontableschema.plugins.sql import Storage
 
 
+# Prepare sql
+engine = sa.create_engine('sqlite:///:memory:')
+
+
 @when('We push/pull resource from "{dataset}" to SQL')
 def step_when_push_pull_resource_to_sql(context, dataset):
-
-    # Prepare sql
-    # TODO: move to module-level:
-    # https://github.com/frictionlessdata/jsontableschema-sql-py/issues/21
-    engine = sa.create_engine('sqlite:///:memory:')
 
     # Generate prefix
     prefix = '%s_' % uuid.uuid4().hex
@@ -47,22 +46,12 @@ def step_when_push_pull_resource_to_sql(context, dataset):
 
         # Delete test tables from storage
         storage = Storage(engine, prefix=prefix)
-        for table in storage.tables:
-            # TODO: remove try-except
-            # https://github.com/frictionlessdata/jsontableschema-sql-py/issues/21
-            try:
-                storage.delete(table)
-            except Exception:
-                pass
+        for table in reversed(storage.tables):
+            storage.delete(table)
 
 
 @when('We push/pull datapackage from "{dataset}" to SQL')
 def step_when_push_pull_datapackage_to_sql(context, dataset):
-
-    # Prepare sql
-    # TODO: move to module-level:
-    # https://github.com/frictionlessdata/jsontableschema-sql-py/issues/21
-    engine = sa.create_engine('sqlite:///:memory:')
 
     # Generate prefix
     prefix = '%s_' % uuid.uuid4().hex
@@ -88,10 +77,5 @@ def step_when_push_pull_datapackage_to_sql(context, dataset):
 
         # Delete test tables from storage
         storage = Storage(engine, prefix=prefix)
-        for table in storage.tables:
-            # TODO: remove try-except
-            # https://github.com/frictionlessdata/jsontableschema-sql-py/issues/21
-            try:
-                storage.delete(table)
-            except Exception:
-                pass
+        for table in reversed(storage.tables):
+            storage.delete(table)
