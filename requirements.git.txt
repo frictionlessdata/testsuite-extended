@@ -9,4 +9,4 @@ git+https://github.com/frictionlessdata/jsontableschema-py.git@master
 git+https://github.com/frictionlessdata/tabulator-py.git@master
 git+https://github.com/frictionlessdata/jsontableschema-bigquery-py.git@master
 git+https://github.com/frictionlessdata/jsontableschema-sql-py.git@master
-git+https://github.com/frictionlessdata/datapackage-py.git@feature/push-pull-datapackage
+git+https://github.com/frictionlessdata/datapackage-py.git@master
