@@ -58,3 +58,8 @@ target/
 
 # Extras
 .credentials.json
+tabulator
+jsontableschema
+jsontableschema_bigquery
+jsontableschema_sql
+datapackage
