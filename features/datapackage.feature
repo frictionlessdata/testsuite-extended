@@ -23,7 +23,7 @@ Feature: Datapackage integrations
         | SQL      | country-list                 |
         | SQL      | currency-codes               |
         | SQL      | gb-country-regional-analysis |
-     #  | SQL      | gdp                          |
+        | SQL      | gdp                          |
         | SQL      | language-codes               |
         | SQL      | nasdaq-listings              |
         | SQL      | registry                     |
