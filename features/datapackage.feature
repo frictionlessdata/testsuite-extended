@@ -10,7 +10,7 @@ Feature: Datapackage integrations
         | BigQuery | country-list                 |
         | BigQuery | currency-codes               |
         | BigQuery | gb-country-regional-analysis |
-      # | BigQuery | gdp                          |
+        | BigQuery | gdp                          |
         | BigQuery | language-codes               |
         | BigQuery | nasdaq-listings              |
         | BigQuery | registry                     |
