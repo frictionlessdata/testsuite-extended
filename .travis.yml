@@ -18,7 +18,7 @@ env:
     - TOXENV="py${PYTHON_VERSION//./}"
   matrix:
     - SOURCE=git
-    # - SOURCE=pypi
+    - SOURCE=pypi
 
 install:
   - make install-${SOURCE}
