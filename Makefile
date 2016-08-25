@@ -12,4 +12,5 @@ list:
 	@grep '^\.PHONY' Makefile | cut -d' ' -f2- | tr ' ' '\n'
 
 test:
+	pip list
 	behave -s --tags=-skip --tags=-wip
