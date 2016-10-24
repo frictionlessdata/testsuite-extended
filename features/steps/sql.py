@@ -46,8 +46,7 @@ def step_when_push_pull_resource_to_sql(context, dataset):
 
         # Delete test tables from storage
         storage = Storage(engine, prefix=prefix)
-        for table in reversed(storage.tables):
-            storage.delete(table)
+        storage.delete()
 
 
 @when('We push/pull datapackage from "{dataset}" to SQL')
@@ -77,5 +76,4 @@ def step_when_push_pull_datapackage_to_sql(context, dataset):
 
         # Delete test tables from storage
         storage = Storage(engine, prefix=prefix)
-        for table in reversed(storage.tables):
-            storage.delete(table)
+        storage.delete()

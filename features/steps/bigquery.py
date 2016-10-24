@@ -58,8 +58,7 @@ def step_when_push_pull_resource_to_bigquery(context, dataset):
 
         # Delete test tables from storage
         storage = Storage(service, project, group, prefix=prefix)
-        for table in storage.tables:
-            storage.delete(table)
+        storage.delete()
 
 
 @when('We push/pull datapackage from "{dataset}" to BigQuery')
@@ -94,5 +93,4 @@ def step_when_push_pull_datapackage_to_bigquery(context, dataset):
 
         # Delete test tables from storage
         storage = Storage(service, project, group, prefix=prefix)
-        for table in storage.tables:
-            storage.delete(table)
+        storage.delete()
