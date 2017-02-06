@@ -21,7 +21,7 @@ env:
     - SOURCE=pypi
 
 install:
-  - pip install six # strange bug without it
+  - pip install six # strange bug - can't install without it
   - make install-${SOURCE}
 
 script:
