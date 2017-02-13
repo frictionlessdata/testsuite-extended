@@ -30,8 +30,9 @@ script:
 notifications:
   slack:
     rooms:
+      secure: fHhwjNItXP8atZvgUQbOxSufCXcaVJFfdUK1RZ89geWIxw7RNSPiFNBRDK7Sgmv/SNjNJiYkms74Sp8iCJ/48Z7+GziVqU6HG1Pj5gAnEow0aQBigl5p3f90/bRDWVUaxpiV03XbFX2c1t5etz89ABGkD43wvfWhJsHiMmOzH5QYgXTbPaGR02I7fiWgvwY6mKHozj9wv3ERHmJN2mD3LCdJEgthlyp6QzdYdVhCr3Yp254bTMVWtteJn0mS99w9meB9CVEpJeiAn1J9ZUzqSZ+zYPr5ksxM/fIUGoCo+NTmElJQJQtAt6OXLzkZ3vNg8IBT968Yft0pEhqOvJyi7/HLcKN03+iZI5xflE6KH0AlCrWoFnRHHHqtTMxAuH3dRQqDYYUmNflpWiTicz+Mo3xHiYM+qSS8HZINktscQAw6bfD7wMm+hVSYJqTFoYaP1T9Mf6Fdx44pU/R+LJAp/pEUm622c+aOHz7w+xhYx8A7gSWVnJD4cPXVZgILrxSVi4ZjF+m7lSM0i32f6t0vwvvSH4DX4qgA+tbw3gXc8BmWmodH8+GZG2peWRVz3b1ylyDfUQu26UMn69mQztTK+9EeeOfFW/2wMF6+rLU0Wga9Iy/v/Z5ZjLJ27Qv1/n99+HOhD3+z8GGGV2hOOQ9EwndkIvR9fWeq2ZnDB1cJpeU=
     on_failure: always
     on_success: always
     on_pull_requests: false
-    template: "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository}@%{branch} %{result} in %{elapsed_time}"
-    secure: fHhwjNItXP8atZvgUQbOxSufCXcaVJFfdUK1RZ89geWIxw7RNSPiFNBRDK7Sgmv/SNjNJiYkms74Sp8iCJ/48Z7+GziVqU6HG1Pj5gAnEow0aQBigl5p3f90/bRDWVUaxpiV03XbFX2c1t5etz89ABGkD43wvfWhJsHiMmOzH5QYgXTbPaGR02I7fiWgvwY6mKHozj9wv3ERHmJN2mD3LCdJEgthlyp6QzdYdVhCr3Yp254bTMVWtteJn0mS99w9meB9CVEpJeiAn1J9ZUzqSZ+zYPr5ksxM/fIUGoCo+NTmElJQJQtAt6OXLzkZ3vNg8IBT968Yft0pEhqOvJyi7/HLcKN03+iZI5xflE6KH0AlCrWoFnRHHHqtTMxAuH3dRQqDYYUmNflpWiTicz+Mo3xHiYM+qSS8HZINktscQAw6bfD7wMm+hVSYJqTFoYaP1T9Mf6Fdx44pU/R+LJAp/pEUm622c+aOHz7w+xhYx8A7gSWVnJD4cPXVZgILrxSVi4ZjF+m7lSM0i32f6t0vwvvSH4DX4qgA+tbw3gXc8BmWmodH8+GZG2peWRVz3b1ylyDfUQu26UMn69mQztTK+9EeeOfFW/2wMF6+rLU0Wga9Iy/v/Z5ZjLJ27Qv1/n99+HOhD3+z8GGGV2hOOQ9EwndkIvR9fWeq2ZnDB1cJpeU=
+    template:
+      - "Build <%{build_url}|#%{build_number}> (<%{compare_url}|%{commit}>) of %{repository}@%{branch} %{result} in %{elapsed_time}"
