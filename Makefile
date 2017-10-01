@@ -1,16 +1,15 @@
-.PHONY: all develop list test
+.PHONY: all install list test version
 
 all: list
 
-install-git:
-	pip install --upgrade -r requirements.git.txt
-
-install-pypi:
-	pip install --upgrade -r requirements.pypi.txt
+install:
+	pip install --upgrade -r requirements.txt
 
 list:
 	@grep '^\.PHONY' Makefile | cut -d' ' -f2- | tr ' ' '\n'
 
 test:
+	pytest
+
+version:
 	pip list
-	behave -s --tags=-skip --tags=-wip

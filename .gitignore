@@ -59,7 +59,9 @@ target/
 # Extras
 .credentials.json
 tabulator
-jsontableschema
-jsontableschema_bigquery
-jsontableschema_sql
+tableschema
+tableschema_bigquery
+tableschema_sql
+tableschema_pandas
 datapackage
+goodtables

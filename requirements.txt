@@ -1,0 +1,14 @@
+# Packages
+tabulator[ods]
+tableschema
+tableschema-bigquery
+tableschema-pandas
+tableschema-sql
+datapackage
+goodtables[ods]
+
+# Testing
+google-api-python-client
+sqlalchemy
+pytest
+mock
