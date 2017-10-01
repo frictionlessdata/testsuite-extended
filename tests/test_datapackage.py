@@ -52,6 +52,9 @@ def test_table_bigquery(name):
     for resource in package.resources:
         assert resource.read()
 
+    # Clean
+    storage.delete()
+
 
 @pytest.mark.parametrize('name', PACKAGES)
 def test_table_pandas(name):

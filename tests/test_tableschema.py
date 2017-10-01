@@ -109,6 +109,9 @@ def test_table_bigquery(name, resource):
     table = Table('table', schema=resource['schema'], storage=storage)
     assert table.read() == cast(resource)['data']
 
+    # Clean
+    storage.delete()
+
 
 @pytest.mark.parametrize('name, resource', [
     ('general', GENERAL),
