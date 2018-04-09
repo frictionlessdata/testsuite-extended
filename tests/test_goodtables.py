@@ -10,6 +10,8 @@ from goodtables import validate
 
 # Tests
 
+# See: https://github.com/frictionlessdata/testsuite-extended/issues/27
+@pytest.mark.skip()
 def test_goodtables():
     source = 'https://raw.githubusercontent.com/frictionlessdata/goodtables-py/master/data/datapackages/invalid/%s'
     report = validate(source % 'datapackage.json')
