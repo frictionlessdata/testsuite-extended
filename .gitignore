@@ -65,3 +65,4 @@ tableschema_sql
 tableschema_pandas
 datapackage
 goodtables
+.pytest-cache
