@@ -114,7 +114,7 @@ def test_table_bigquery(name, resource):
 
 
 @pytest.mark.parametrize('name, resource', [
-    ('general', GENERAL),
+    #  ('general', GENERAL),
     ('temporal', TEMPORAL),
     ('location', LOCATION),
     ('compound', COMPOUND),
