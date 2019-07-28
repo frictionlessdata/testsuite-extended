@@ -4,6 +4,15 @@
 
 Testsuite for Frictioinless Data extended implementations.
 
+## Contents
+
+<!--TOC-->
+
+  - [Contributing](#contributing)
+    - [Python](#python)
+
+<!--TOC-->
+
 ## Contributing
 
 ### Python
