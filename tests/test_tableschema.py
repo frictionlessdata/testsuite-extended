@@ -122,7 +122,6 @@ def test_table_bigquery(name, resource):
 def test_table_pandas(name, resource):
 
     # Storage
-    engine = create_engine('sqlite:///')
     storage = Storage.connect('pandas')
 
     # Save
