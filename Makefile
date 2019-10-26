@@ -1,7 +1,7 @@
 .PHONY: all install list test version
 
 
-MAINTAINER := $(shell head -n 1 MAINTAINER.md)
+LEAD := $(shell head -n 1 LEAD.md)
 
 
 all: list
@@ -18,8 +18,8 @@ readme:
 	sed -i '/(#testsuite-extended)/,+1d' README.md
 
 templates:
-	sed -i -E "s/@(\w*)/@$(MAINTAINER)/" .github/issue_template.md
-	sed -i -E "s/@(\w*)/@$(MAINTAINER)/" .github/pull_request_template.md
+	sed -i -E "s/@(\w*)/@$(LEAD)/" .github/issue_template.md
+	sed -i -E "s/@(\w*)/@$(LEAD)/" .github/pull_request_template.md
 
 test:
 	pytest
